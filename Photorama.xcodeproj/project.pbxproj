@@ -20,6 +20,7 @@
 		00D6FE981F3CD8A700C193A2 /* PhotoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D6FE971F3CD8A700C193A2 /* PhotoDataSource.swift */; };
 		00D6FE9A1F3CE95C00C193A2 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D6FE991F3CE95C00C193A2 /* PhotoCollectionViewCell.swift */; };
 		00D6FE9C1F3CF2D600C193A2 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D6FE9B1F3CF2D600C193A2 /* ImageStore.swift */; };
+		00D6FE9E1F3CF40E00C193A2 /* PhotoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D6FE9D1F3CF40E00C193A2 /* PhotoInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		00D6FE971F3CD8A700C193A2 /* PhotoDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDataSource.swift; sourceTree = "<group>"; };
 		00D6FE991F3CE95C00C193A2 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		00D6FE9B1F3CF2D600C193A2 /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		00D6FE9D1F3CF40E00C193A2 /* PhotoInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				00D6FE8F1F3B543000C193A2 /* PhotosViewController.swift */,
 				00D6FE651F3B539700C193A2 /* Main.storyboard */,
 				00D6FE681F3B539700C193A2 /* Assets.xcassets */,
+				00D6FE9D1F3CF40E00C193A2 /* PhotoInfoViewController.swift */,
 				00D6FE951F3CA3E100C193A2 /* Photo.swift */,
 				00D6FE991F3CE95C00C193A2 /* PhotoCollectionViewCell.swift */,
 				00D6FE931F3C9D7C00C193A2 /* PhotoStore.swift */,
@@ -288,6 +291,7 @@
 				00D6FE9A1F3CE95C00C193A2 /* PhotoCollectionViewCell.swift in Sources */,
 				00D6FE621F3B539700C193A2 /* AppDelegate.swift in Sources */,
 				00D6FE961F3CA3E100C193A2 /* Photo.swift in Sources */,
+				00D6FE9E1F3CF40E00C193A2 /* PhotoInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
