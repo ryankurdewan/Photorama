@@ -34,6 +34,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Photorama" id="FBe-rb-JsF"/>
+                    <connections>
+                        <outlet property="imageView" destination="HSl-nB-97f" id="dMV-Vo-4Ny"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
