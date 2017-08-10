@@ -8,34 +8,47 @@
 
 import UIKit
 
-class PhotosViewController: UIViewController {
-    @IBOutlet var imageView: UIImageView!
+class PhotosViewController: UIViewController, UICollectionViewDelegate {
+    @IBOutlet var collectionView: UICollectionView!
+    let photoDataSource = PhotoDataSource()
     var store: PhotoStore!
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        store.fetchInterestingPhotos {
+        collectionView.dataSource = photoDataSource
+        collectionView.delegate = self
+        store.fetchInterestingPhotos
+            {
             (photosResult) -> Void in
-            switch photosResult {
+            switch photosResult
+            {
                 case let .success(photos):
                     print("Successfully found \(photos.count) photos.")
-                    if let firstPhoto = photos.first {
-                        self.updateImageView(for: firstPhoto)
-                }
+                    self.photoDataSource.photos = photos
                 case let .failure(error):
                     print("Error fetching interesting photos: \(error)")
+                    self.photoDataSource.photos.removeAll()
             }
+            self.collectionView.reloadSections(IndexSet(integer: 0))
         }
     }
-    func updateImageView(for photo: Photo) {
-        store.fetchImage(for: photo) {
-            (imageResult) -> Void in
-            switch imageResult {
-            case let .success(image):
-                OperationQueue.main.addOperation {
-                    self.imageView.image = image
-                }
-            case let .failure(error):
-                print("Error downloading image: \(error)")
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath)
+    {
+        let photo = photoDataSource.photos[indexPath.row]
+        // download the image data
+        store.fetchImage(for: photo)
+        { (result) -> Void in
+            guard let photoIndex = self.photoDataSource.photos.index(of: photo),
+                case let .success(image) = result else
+            {
+                    return
+            }
+            let photoIndexPath = IndexPath(item: photoIndex, section: 0)
+            // only update if cell is still visible
+            if let cell = self.collectionView.cellForItem(at: photoIndexPath) as? PhotoCollectionViewCell
+            {
+                cell.update(with: image)
             }
         }
     }
