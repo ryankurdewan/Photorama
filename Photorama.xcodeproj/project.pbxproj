@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		00D6FE621F3B539700C193A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D6FE611F3B539700C193A2 /* AppDelegate.swift */; };
-		00D6FE641F3B539700C193A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D6FE631F3B539700C193A2 /* ViewController.swift */; };
 		00D6FE671F3B539700C193A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D6FE651F3B539700C193A2 /* Main.storyboard */; };
 		00D6FE691F3B539700C193A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00D6FE681F3B539700C193A2 /* Assets.xcassets */; };
 		00D6FE6C1F3B539700C193A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D6FE6A1F3B539700C193A2 /* LaunchScreen.storyboard */; };
 		00D6FE771F3B539700C193A2 /* PhotoramaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D6FE761F3B539700C193A2 /* PhotoramaTests.swift */; };
 		00D6FE821F3B539700C193A2 /* PhotoramaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D6FE811F3B539700C193A2 /* PhotoramaUITests.swift */; };
+		00D6FE901F3B543100C193A2 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D6FE8F1F3B543000C193A2 /* PhotosViewController.swift */; };
+		00D6FE921F3B571E00C193A2 /* FlickrAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D6FE911F3B571E00C193A2 /* FlickrAPI.swift */; };
+		00D6FE941F3C9D7D00C193A2 /* PhotoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D6FE931F3C9D7C00C193A2 /* PhotoStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,6 @@
 /* Begin PBXFileReference section */
 		00D6FE5E1F3B539700C193A2 /* Photorama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photorama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D6FE611F3B539700C193A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		00D6FE631F3B539700C193A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		00D6FE661F3B539700C193A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		00D6FE681F3B539700C193A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00D6FE6B1F3B539700C193A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +48,9 @@
 		00D6FE7D1F3B539700C193A2 /* PhotoramaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoramaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D6FE811F3B539700C193A2 /* PhotoramaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoramaUITests.swift; sourceTree = "<group>"; };
 		00D6FE831F3B539700C193A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00D6FE8F1F3B543000C193A2 /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		00D6FE911F3B571E00C193A2 /* FlickrAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrAPI.swift; sourceTree = "<group>"; };
+		00D6FE931F3C9D7C00C193A2 /* PhotoStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,9 +102,11 @@
 			isa = PBXGroup;
 			children = (
 				00D6FE611F3B539700C193A2 /* AppDelegate.swift */,
-				00D6FE631F3B539700C193A2 /* ViewController.swift */,
+				00D6FE8F1F3B543000C193A2 /* PhotosViewController.swift */,
 				00D6FE651F3B539700C193A2 /* Main.storyboard */,
 				00D6FE681F3B539700C193A2 /* Assets.xcassets */,
+				00D6FE931F3C9D7C00C193A2 /* PhotoStore.swift */,
+				00D6FE911F3B571E00C193A2 /* FlickrAPI.swift */,
 				00D6FE6A1F3B539700C193A2 /* LaunchScreen.storyboard */,
 				00D6FE6D1F3B539700C193A2 /* Info.plist */,
 			);
@@ -262,7 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00D6FE641F3B539700C193A2 /* ViewController.swift in Sources */,
+				00D6FE921F3B571E00C193A2 /* FlickrAPI.swift in Sources */,
+				00D6FE901F3B543100C193A2 /* PhotosViewController.swift in Sources */,
+				00D6FE941F3C9D7D00C193A2 /* PhotoStore.swift in Sources */,
 				00D6FE621F3B539700C193A2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
